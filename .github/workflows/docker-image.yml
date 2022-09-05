@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Create network
+      run: docker network create --driver=bridge my_project_network
     - name: Build the Docker image
       run: docker-compose up --build -d
     - name: test CPU
