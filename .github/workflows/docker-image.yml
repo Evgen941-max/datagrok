@@ -15,6 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker-compose build
-    - name: Show
-      run: docker images
+      run: docker-compose up --build -d
+    - name: test CPU
+      run: curl 0.0.0.0:8080
+    - name: test MEMORY
+      run: curl 0.0.0.0:8090
+    - name: Stop Docker
+      run: docker-compose down
