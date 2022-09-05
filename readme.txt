@@ -1,0 +1,1 @@
+When you run command "docker-compose up --build", you need create docker network. Run command "docker network create --driver=bridge my_project_network"

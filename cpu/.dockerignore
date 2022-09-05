@@ -1,0 +1,4 @@
+Dockerfile
+out.json
+script.sh
+.dockerignore
