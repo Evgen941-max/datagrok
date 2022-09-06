@@ -3,3 +3,6 @@ buiid:
 
 compose:
 	docker-compose up --build
+
+compose-scale:
+	docker-compose up --scale flask_cpu=2

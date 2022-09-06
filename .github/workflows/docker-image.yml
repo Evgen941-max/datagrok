@@ -17,10 +17,10 @@ jobs:
     - name: Create network
       run: docker network create --driver=bridge my_project_network
     - name: Build the Docker image
-      run: docker-compose up --build -d
+      run: docker-compose up --scale flask_cpu=2 -d
     - name: test CPU
       run: curl 0.0.0.0:8080
-    - name: test MEMORY
-      run: curl 0.0.0.0:8090
+    - name: Docker list
+      run: docker ps
     - name: Stop Docker
       run: docker-compose down
